@@ -1,4 +1,4 @@
-package lectures
+package lectures.part1basic
 
 object Function extends App{
 
