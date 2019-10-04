@@ -1,13 +1,25 @@
 package lectures.part1basic
 
 object Recursion extends App {
+// factorial without accumulator
 
-  def factorial(number: Int): Int = {
+  def factorialSlow(number: Int): Int = {
     if (number <= 1) 1
     else number * factorial(number - 1)
   }
 
-  //Tail recursion
+  // factorial with accumulator
+
+  def factorial(x:Int):Int ={
+
+    def fact(x:Int, acc:Int):Int={
+      if(x<=1) acc
+      else fact(x-1, x*acc)
+    }
+    fact(x,1)
+  }
+
+  println(factorial(10))
 
   def anotherRecursion(n: BigInt): BigInt = {
     def helper(x: BigInt, accumulator: BigInt): BigInt =

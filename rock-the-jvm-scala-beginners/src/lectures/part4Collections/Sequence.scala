@@ -18,9 +18,12 @@ object Sequence extends App{
 /// Range
 
   val aRange: Seq[Int] = 1 to 10
+  val alfabet: Seq[Char] = 'a' to 'z'
 
   aRange.foreach(println)
+  alfabet.foreach(println)
   (1 to 10).foreach(x=>println("Hello"))
+  ('a' to 'z').foreach(println)
 
   /// List
 

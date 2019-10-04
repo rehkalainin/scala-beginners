@@ -56,6 +56,14 @@ object TuplesAndMaps extends App{
   val nameList = List("Andrey", "Anton", "Jim", "Bob","Bil")
   println(nameList.groupBy(name=>name.charAt(0)))
 
+  // example overlap and simple social network
 
+val nameMap = Map("Jim"->123, "JIM"-> 456, "JIM" -> 789, "Bil"-> 988)
+  println(nameMap)
+  println(nameMap("Bil"))
+println(nameMap.map(pair=>pair._1.toLowerCase -> pair._2))
 
+  def add (network: Map[String, Set[String]], person:String):Map[String,Set[String]]={
+    network + (person->Set())
+  }
 }
