@@ -18,29 +18,9 @@ object Sequence extends App{
 /// Range
 
   val aRange: Seq[Int] = 1 to 10
-  val alfabet: Seq[Char] = 'a' to 'z'
 
   aRange.foreach(println)
-  alfabet.foreach(println)
   (1 to 10).foreach(x=>println("Hello"))
-  ('a' to 'z').foreach(println)
-
-  /// List
-
-  val list = List(1,2,3,4)
-  val prep = 42 +: list :+ 89
-
-  println(list)
-  println(42 :: list)
-  println(prep)
-  println(list(3))
-
-  val apples5 = List.fill(5)("apple")
-  println(apples5)
-  println(list.head)
-  println(list.tail)
-
-  println(prep.mkString(" "))
 
   /// Arrays
 
@@ -58,6 +38,36 @@ object Sequence extends App{
   arr1(1) = 22
   println(arr1.toSeq)
 
+  /// List
 
+  val list = List(1,2,3,4)
+  val prep = 42 +: list :+ 89
+  val collection = List (1,3,5,7,8,9,2,4,5)
 
+  println(list)
+  println(42 :: list)
+  println(prep)
+  println(list(3))
+
+  val apples5 = List.fill(5)("apple")
+  println("fill "+apples5)
+  println("List head "+list.head)
+  println("List tail "+list.tail)
+
+  println(prep.mkString(" "))
+
+  // reduce = бинарная функция, которая объединяет параметры для получения 1 значения
+  println("reduce max "+collection.reduce((x,y)=>x max y))// возвращает 1 значение
+  println("reduce min "+collection.reduce(_ min _))
+  println("scan "+collection.scan(0)(_ + _)) // возвращает измененную колекцию
+  println("fold "+collection.fold(0)(_ + _))
+
+  // унарные операции map, flatMap, zip
+println("map "+collection.map(x=> x+100))
+println("flatMap "+ collection.flatMap(x=> List(x,x+100,x+1000)))
+
+  // унарные с предикатом
+
+  println("partition "+collection.partition(x=> x%2==0))
+  println("filter "+ collection.filter(x=> x%2==0))
 }

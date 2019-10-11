@@ -2,14 +2,6 @@ package lectures.part2oop
 
 object OOBasic extends  App {
 
-  case class Point (val x: Int =0, val y: Int =0)
-  val point1 = new Point
-  val point2 = new Point (1)
-  val point3 = new Point(y=2)
-  val point4 = new Point(1,2)
-  println(s"point1 = $point1; point2= $point2; /n point3 = $point3; point4 = $point4")
-
-
   val author = new Writer("Charls", "Dikkens", 1812)
   val book = new Novel ("Miracle", 1862, author )
 
@@ -19,8 +11,6 @@ object OOBasic extends  App {
   counter.inc.print
   counter.inc.inc.inc.print
   counter.inc(10)
-
-  override def toString = s"OOBasic($point1, $point2, $point3, $point4)"
 }
 
 

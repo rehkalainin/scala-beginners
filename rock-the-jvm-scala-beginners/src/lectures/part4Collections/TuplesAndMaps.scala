@@ -1,6 +1,18 @@
 package lectures.part4Collections
-
+import Array.ofDim
 object TuplesAndMaps extends App{
+
+// multidimentional Arrays
+
+  var a =ofDim[Int](3,3)
+  var k=1
+  for(i<-0 to 2){
+    for(j<-0 to 2){
+      a(i)(j) = i+k
+      k+=1
+    }
+    k-=1
+  }
 
   // tuples
   val aTuples = (2, "Hello Scala")
@@ -35,7 +47,7 @@ object TuplesAndMaps extends App{
   println(newPhonebook)
   println(newPhonebook2)
 
-  // map, filter, flashMap
+  // map, filter, flatMap
 
  // println(phonebook.map{case(key,value)=>(key.)}
   println(phonebook.map{ case (key, value) => (key.toLowerCase, value)})
@@ -56,14 +68,6 @@ object TuplesAndMaps extends App{
   val nameList = List("Andrey", "Anton", "Jim", "Bob","Bil")
   println(nameList.groupBy(name=>name.charAt(0)))
 
-  // example overlap and simple social network
 
-val nameMap = Map("Jim"->123, "JIM"-> 456, "JIM" -> 789, "Bil"-> 988)
-  println(nameMap)
-  println(nameMap("Bil"))
-println(nameMap.map(pair=>pair._1.toLowerCase -> pair._2))
 
-  def add (network: Map[String, Set[String]], person:String):Map[String,Set[String]]={
-    network + (person->Set())
-  }
 }
