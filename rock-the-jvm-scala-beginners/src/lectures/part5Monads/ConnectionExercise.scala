@@ -21,10 +21,17 @@ object ConnectionExercise extends App {
   }
   // try to establish connection
   // 1
-  val host = config.get("host")
+ /* val host = config.get("host")
   val port = config.get("port")
   val connection = host.flatMap(h=>port.flatMap(p=>Connection.apply(h,p)))
   val connectionStatus = connection.map(c=>c.connect)
   println(connectionStatus)
+*/
+    // 2
 
+  config.get("host")
+    .flatMap(h => config.get("port")
+      .flatMap(p=>Connection(h,p))
+      .map(c=>c.connect))
+    .foreach(println)
 }
