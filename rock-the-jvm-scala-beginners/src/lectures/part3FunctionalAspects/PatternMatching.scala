@@ -1,5 +1,7 @@
 package lectures.part3FunctionalAspects
 
+import lectures.part3FunctionalAspects.PatternMatching
+
 import scala.util.Random
 
 object PatternMatching extends App {
@@ -124,12 +126,11 @@ object PatternMatching extends App {
 
   println(getPerson(User("Nik","Brown")))
   println(getPerson(Admin("Antony","Black")))
+///////////////
 
   val list  = List(1,2,3,4)
   val head::tail = list
 
-  println(head)
-  println(tail)
 }
 
 

@@ -47,5 +47,24 @@ object PatternsEverywhere extends App{
   })
 println(mapedList)
 
+  // match using unapply
+  class Person (val name: String, val age: Int)
+  object Person{
+    def unapply(person: Person): Option[(String, Int)] = Some((person.name, person.age))
+  }
+val aPerson = new Person("Valera", 27)
+  aPerson match {
+    case Person (name, _)=> println(s"My name is $name")
+  }
 
+  // match without unapply because use case class
+  case class Animal (val name:String, val age:Int)
+
+  val anAnimal = new Animal("Bobby", 2)
+
+  def greeting (animal: Animal):String=animal match{
+    case Animal(_, age) if age>0 && age<3=> s"Yang animal"
+    case Animal(_, age) if age>=3=> s"adult animal"
+  }
+  println(greeting(anAnimal))
 }
