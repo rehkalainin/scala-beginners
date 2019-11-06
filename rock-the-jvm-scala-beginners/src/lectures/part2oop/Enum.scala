@@ -1,5 +1,7 @@
 package lectures.part2oop
 
+import lectures.part2oop.Enum.Margin.TOP
+
 object Enum extends App{
 
   // approach 1 useing sealed trait
@@ -19,4 +21,11 @@ object Enum extends App{
   }
 
   println(Margin.TOP)
+
+  object Car extends Enumeration{
+    type Car = Value
+    val BMW,TOYOTA,MERSEDES = Value
+  }
+
+  println(Car.BMW)
 }

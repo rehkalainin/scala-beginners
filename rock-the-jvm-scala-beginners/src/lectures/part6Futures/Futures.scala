@@ -13,7 +13,7 @@ object Futures extends App {
 Thread.sleep(2000)
   println(fut.isCompleted)
   println(fut.value) // Option[Try[Int]]
-  println(fut)
+  println(fut)// Future[[Try[Int]]
   println(res)
 //
   def miningOfLife:Int={
@@ -70,5 +70,5 @@ Thread.sleep(2000)
     promise.future
   }
 
-  println(first(Future{2+2+2},Future{3+3}))
+  println(first(Future{2+2+2+2},Future{3+3}))
 }

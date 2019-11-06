@@ -1,5 +1,7 @@
 package exercises
 
+import exercises.ex1.App
+
 abstract class MyList[+A] {
 
   def head:A
