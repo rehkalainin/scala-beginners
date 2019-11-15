@@ -1,5 +1,7 @@
 package lectures.part4Collections
 
+import lectures.part8Implicit.ImplicitEx.Person
+
 object Sequence extends App{
 
   ///Seq
@@ -44,6 +46,19 @@ object Sequence extends App{
   val charList = List('a','b','c','d','e')
   val prep = 42 +: list :+ 89
   val collection = List (1,3,5,7,8,9,2,4,5)
+  val nameList = List("Andrey", "Anton", "Jim", "Andrey", "Bob","Bil","Jim","jim")
+  val numberList = List(1,2,3,4,5,1,2,3,1,2,3,1,2,1)
+
+  val ord:Ordering[Int] = Ordering.fromLessThan(_>_)
+  val listSort = numberList.sorted(ord)
+  println("sorder(ordering) "+ listSort)
+
+  case class Person(name:String)
+  object Person{
+    implicit val personOrdering: Ordering[Person]= Ordering.fromLessThan((a,b)=>a.name.compareTo(b.name)<0)
+  }
+  val listPerson = List(Person("Bob"),Person("Alice"),Person("Il"))
+  println("sorder listPerson by Person(name) "+listPerson.sorted)
 
   println(list)
   println(42 :: list)
@@ -51,14 +66,23 @@ object Sequence extends App{
   println(list(3))
 
   val apples5 = List.fill(5)("apple")
+
   println("fill "+apples5)
   println("List head "+list.head)
   println("List tail "+list.tail)
-  println("list(0) "+ list(0)) // возвращает Элемент под номером 0 - 1
+  println("list(0) "+ list(0)) // возвращает Элемент под индексом 0 - 1
   println("list.take(2) "+ list.take(2)) // возвращает List с элементами до индекса 2 - List(1,2)
   println("list.drop(2) "+ list.drop(2)) // возвращает List с элементами после индекса 2 - List(3,4)
+  println("list.grouped(3) "+ list.grouped(3).toList) // List(List(1, 2, 3), List(4))
   println("list.splitAt(2) "+ list.splitAt(2)) // разбивает список по заданному индексу на 2 списка и возвращ. кортеж (List(1,2), List(3,4))
   println("indeces" + list.indices )// возвращает Range 0 until 4
+  println("find " + list.find(x=>x>2 && x<5) )// Some(3) возвращаемый тип Option[]
+  println("toSet "+ nameList.flatMap(x=>x.toSet))
+
+
+  // sortedBy
+  println(numberList.sortBy(identity)) // List(1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 5)
+  println(nameList.sortBy(identity)) // List(Andrey, Andrey, Anton, Bil, Bob, Jim, Jim, jim)
 
   println("flatten " + List(List(1,2),List(3), List(),List(4,5)).flatten ) // работает только на списке списков, линеаризирует в единый список
   val ziped = list.zip(charList)
@@ -72,8 +96,9 @@ object Sequence extends App{
   // reduce = бинарная функция, которая объединяет параметры для получения 1 значения
   println("reduce max "+collection.reduce((x,y)=>x max y))// возвращает 1 значение
   println("reduce min "+collection.reduce(_ min _))
-  println("scan "+collection.scan(0)(_ + _)) // возвращает измененную колекцию
-  println("fold "+collection.fold(0)(_ + _))
+  println("scan "+collection.scan(0)(_ + _)) // возвращает измененную колекцию List(0, 1, 4, 9, 16, 24, 33, 35, 39, 44)
+  println("fold "+collection.fold(0)(_ + _)) // 44
+  println("foldLeft "+collection.foldLeft(0)(_+_)) // 44
 
   // методы высшего порядка map, flatMap
 println("map "+collection.map(x=> x+100))

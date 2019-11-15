@@ -9,6 +9,8 @@ object AnonymousFunction extends App{
   println(f1("Hello","Scala"))
   println(f2("Hello","Scala2!!"))
 
+  // HOF functions
+
   def myFunction (fun:(String,String)=>String)=
     fun("Dog","Cat")
 

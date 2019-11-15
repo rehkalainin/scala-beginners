@@ -7,7 +7,7 @@ object CompanionObject extends App{
 
   // good practice use value classes
 
-  case class Human (name:Name, lastName:LastName, age:Age)
+  class Human (name:Name, lastName:LastName, age:Age)
   object Human {
     class Name (val value:String) extends AnyVal{
 
@@ -21,12 +21,12 @@ object CompanionObject extends App{
 
      override def toString = s"Age($value)"
    }
-  def apply (name: Name, lastName: LastName): Human = Human(name, lastName, new Age(0))
-  def apply (name: Name):Human = Human(name, new LastName("Noname"),new Age(0))
+  def apply (name: Name, lastName: LastName): Human = new Human(name, lastName, new Age(0))
+  def apply (name: Name):Human = new Human(name, new LastName("Noname"),new Age(0))
 
   }
 
-  println(Human( new Name("Bob"), new LastName("Black"), new Age(25)))
+  println(new Human( new Name("Bob"), new LastName("Black"), new Age(25)))
   println(Human( new Name("Bob"), new LastName("Black")))
   println(Human( new Name("Bob")))
 }

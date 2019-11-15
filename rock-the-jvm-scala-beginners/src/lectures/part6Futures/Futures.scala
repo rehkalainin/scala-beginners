@@ -5,16 +5,16 @@ import scala.util.{Failure, Success}
 
 object Futures extends App {
 
-  val fut= Future{
+  val fut: Future[Int]= Future{
     Thread.sleep(1000)
     21+21}
   val res = fut.map(x=> x+1)
 
 Thread.sleep(2000)
-  println(fut.isCompleted)
-  println(fut.value) // Option[Try[Int]]
-  println(fut)// Future[[Try[Int]]
-  println(res)
+  println(fut.isCompleted) // true
+  println(fut.value) // Some(Success(42))
+  println(fut) // Future(Success(42))
+  println(res) // Future(Success(43))
 //
   def miningOfLife:Int={
     Thread.sleep(1000)
