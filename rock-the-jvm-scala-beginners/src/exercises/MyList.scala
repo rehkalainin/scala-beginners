@@ -70,7 +70,7 @@ object ListTest extends App{
  println(listOfInt.printElement)
   println(listOfInt.toString)
   println(listOfString.printElement)
- println(list.flatMap(x=>x*10))
+// println(list.flatMap(x=>x*10))
 
 
 
