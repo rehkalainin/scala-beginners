@@ -18,7 +18,7 @@ object ImplicitEx extends App {
     }
   }
 
-  implicit def fromStringToPerson(name: String): Person = Person(name)
+ implicit def fromStringToPerson(name: String): Person = Person(name)
 
   println("Valera".greet)
 
@@ -37,9 +37,9 @@ object ImplicitEx extends App {
   val listSort = List(1, 2, 5, 3, 4).sorted
   println(listSort)
 
-  object Person{
-   implicit val personOrdering: Ordering[Person]= Ordering.fromLessThan((a,b)=>a.name.compareTo(b.name)<0)
-  }
+  implicit val personOrdering: Ordering[Person]= Ordering.fromLessThan((a,b)=>a.name.compareTo(b.name)<0)
   val listPerson = List(Person("Bob"),Person("Alice"),Person("Il"))
+
   println(listPerson.sorted)
+
 }

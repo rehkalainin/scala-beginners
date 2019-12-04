@@ -118,4 +118,5 @@ println("flatMap "+ collection.flatMap(x=> List(x,x+100,x+1000)))
 
   println("partition "+collection.partition(x=> x%2==0)) // возвращает отфильтрованный и оставшийся листы
   println("filter "+ collection.filter(x=> x%2==0)) // возвращает отфильтрованный лист
+  println("span "+ collection.span(x=> x==collection.head)) // возвращает тьюпл (List(1),List(3, 5, 7, 8, 9, 2, 4, 5))
 }

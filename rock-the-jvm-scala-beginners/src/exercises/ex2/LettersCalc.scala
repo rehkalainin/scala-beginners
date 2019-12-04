@@ -19,9 +19,13 @@ object LettersCalc extends App {
   }
 
   def lettersCalc2(s:String)={
-    s.toList.foldLeft(Map[Char,List[Char]]()){(m,n)=>
-      if(m.contains(n)) m+ (n->(m(n):+n))
-      else m+(n->List(n))
+    s.toList.foldLeft(Map[Char,List[Char]]()){(m,n)=> m match {
+      case m if m.contains(n) => m+ (n-> (m(n):+n))
+      case m => m+ (n->List(n))
+
+      //      if(m.contains(n)) m+ (n->(m(n):+n))
+      //      else m+(n->List(n))
+    }
     }.mapValues(_.size).toList.sortBy(_._1)
   }
 

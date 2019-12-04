@@ -1,21 +1,6 @@
 package exercises.ex2
 
-import exercises.MyPredicate
-import lectures.part2oop.Generics.MyList
-
-
-object TestList extends App {
-
-//  Написать собственную реализацию рекурсивной структуры List[T]
-//    Например:
-//
-//    1 -> (2 -> (3 -> (4 -> Nil)))
-//
-//  В которой есть доступ к head (сложность O(c))
-//  доступ к tail (сложность O(c))
-//
-//  - Написать реализацию map, flatMap, filter
-//  - Написать реализацию очереди, set
+object MyListEx extends App {
 
   abstract class MyList[+A]{
     def head:A
@@ -26,7 +11,16 @@ object TestList extends App {
     def ++ [B>:A](list:MyList[B]):MyList[B]
     def filter (p: A=>Boolean):MyList[A]
   }
-  object EmptyList extends MyList[Nothing] {
+  object MyList{
+    def apply[A](elements:A*):MyList[A]={
+      def helper(remaining:Seq[A], res:MyList[A]):MyList[A]={
+        if(remaining.isEmpty)res
+        else helper(remaining.tail, res.add(remaining.head))
+      }
+      helper(elements,EmptyList)
+    }
+  }
+  case object EmptyList extends MyList[Nothing] {
     override def head: Nothing = throw new NoSuchElementException
 
     override def tail: MyList[Nothing] = throw new NoSuchElementException
@@ -48,7 +42,7 @@ object TestList extends App {
 
     override def add[B >: A](element: B): MyList[B] = new nList(element,this)
 
-    override def ++[B >: A](list: MyList[B]): MyList[B] = list ++ t
+    override def ++[B >: A](list: MyList[B]): MyList[B] =  nList(h, t++list )
 
     override def map[B](f: A => B): MyList[B] = new nList(f(h),t.map(f))
 
@@ -68,6 +62,9 @@ object TestList extends App {
 //  trait MyPredicat[-A]{
 //    def check(element:A):Boolean
 //  }
+trait MyFunction[-T1, T2] {
+  def transform(el:T1):T2
+}
 
  // testing
   println(new nList(1,new nList(2,new nList(3,new nList(4,EmptyList)))).map(x=>x*10))
@@ -76,9 +73,16 @@ object TestList extends App {
 
   println(new nList("Hello",new nList("Scala",EmptyList)))
 
+  val list1 = new nList(1,new nList(2,nList(3,EmptyList)))
+  val list2 = new nList(4,new nList(5,nList(6,EmptyList)))
+  val totalList = list1++list2
+  println("total list "+ totalList)
 
-  trait MyFunction[-T1, T2] {
-    def transform(el:T1):T2
-  }
+  println("list sum "+ (List(1,2,3) ++ List(4,5)) )
+  println("Set sum "+ (Set(1,2,3) ++ Set(4,5,6,7)) )
+
+
+
+
 
 }
