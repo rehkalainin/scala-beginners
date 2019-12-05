@@ -25,36 +25,35 @@ object ParalelFunction extends App {
 
   val list = List(1,2,3,4,5,6)
 
-  def squareAsync(n:Int):Future[Int] = Future(n*n)
-
-  def factorialAsync (n:Int):Future[Int]= {
-    def helper(x:Int, acc:Int):Int={
-      if (x<=1) acc
-      else helper(x-1, acc*x)
+  def factAsync (n:Int):Future[Int]={
+    def helper (acc: Int, remaining: Int):Int={
+      if(remaining<=1) acc
+      else helper(acc*remaining, remaining-1)
     }
-    Future(helper(n,1))
-  }
- // Future.sequence(Seq(a, b, c))
+   Future(helper(1, n))
 
-  def listFutures(list:List[Int], f: Int=>Future[Int])={
-    list.map(x=>f(x))
   }
-
-  def collectResult (listFutures: List[Future[Int]]): Future[List[Int]]={
-    def helper(acc: Future[List[Int]], remaining: List[Future[Int]]):Future[List[Int]]={
-      if(remaining.isEmpty) acc
+  def squreAsync(n:Int):Future[Int]={
+    Future{
+      println(s"culc square $n")
+      n*n}
+  }
+  def collectFut(list:List[Int], f:Int=>Future[Int]):List[Future[Int]]={
+    list.map(x=> f(x))
+  }
+  def collectRes(listFut: List[Future[Int]]):Future[List[Int]]={
+  //Future.sequence(listFut)
+    def helper (acc: Future[List[Int]], remaining: List[Future[Int]]):Future[List[Int]]={
+      if (remaining.isEmpty)acc
       else {
-        val newAcc = acc.flatMap(li=> remaining.head.map(i=> li:+i))
+        val newAcc = acc.flatMap(listRes=> remaining.head.map(res=> listRes:+res))
         helper(newAcc, remaining.tail)
       }
     }
-    val initialList : Future[List[Int]] = Future.successful(Nil)
-    helper(initialList, listFutures)
+    val initial = Future.successful(Nil)
+    helper(initial, listFut)
   }
 
-    val aw: List[Int] = Await.result(collectResult(listFutures(list,squareAsync)), 2.second)
-    println(aw)
-    println(Await.result(collectResult(listFutures(list,factorialAsync)),2 second) )
-    println("____________________________________")
-
+ val await = Await.result(collectRes(collectFut(list,squreAsync)),2.second)
+  println(await)
 }
