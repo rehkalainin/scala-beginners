@@ -20,6 +20,8 @@ object TuplesAndMaps extends App{
   val bTuples= aTuples.copy(2,"Goodbuy Java")
   val cTuples= aTuples.copy(_1 = 1)
   val dTuples = 'a'->2
+ println("Hello from ZIP " +  "Hello".zip("World"))
+
   println(bTuples)
   println(cTuples)
   println(bTuples.swap)

@@ -1,6 +1,7 @@
 package lectures.part6Futures
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{Future, Promise}
+import scala.concurrent.{Await, Future, Promise}
+import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 
 object Futures extends App {
@@ -56,19 +57,25 @@ Thread.sleep(2000)
 //2. inSequence (fa, fb)
 
   def inSequence[Int, String] (first: Future[Int], second: Future[String] ):Future[String]={
-    first.flatMap(f=>second)
+    first.flatMap(f1=>second)
   }
-  println(Future{67+63-7},Future{"Second Future"})
+  val await1 = Await.result(inSequence(Future(65+65),Future("Text")),2.second)
+  println(await1)
 
   // 3. first out of two futures
   def first[Int](fa:Future[Int], fb:Future[Int]):Future[Int]={
-    val promise = Promise[Int]
+    val listFut : List[Future[Int]] = List()
 
-    fa.onComplete(promise.tryComplete)
-    fb.onComplete(promise.tryComplete)
+   Future.firstCompletedOf(listFut)
 
-    promise.future
+//    val promise = Promise[Int]
+//
+//    fa.onComplete(promise.tryComplete)
+//    fb.onComplete(promise.tryComplete)
+//
+//    promise.future
   }
 
-  println(first(Future{2+2+2+2},Future{3+3}))
+
+ //println(Await.result(first(Future{2+2+2+2},Future{3+3}),2.second))
 }
