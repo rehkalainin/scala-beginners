@@ -6,7 +6,7 @@ import scala.concurrent.duration._
 
 object ParalelFunction extends App {
 
-//  Написать ф-цию, параллельно вычисляющую некоторую функцию применительно к каждому элементу списка:
+  //  Написать ф-цию, параллельно вычисляющую некоторую функцию применительно к каждому элементу списка:
   ////
   ////    List(1,2,3,4,5,6)
   ////
@@ -19,41 +19,54 @@ object ParalelFunction extends App {
   ////    f = x!
   ////    result = List(1, 2, 6, 24, 120, ...)
 
- // def squareAsync(n: Int): Future[Int] = ???
+  // def squareAsync(n: Int): Future[Int] = ???
 
- // def collectResults(futures: List[Future[Int]]): Future[List[Int]]
+  // def collectResults(futures: List[Future[Int]]): Future[List[Int]]
 
-  val list = List(1,2,3,4,5,6)
+  val list = List(1, 2, 3, 4, 5, 6)
 
-  def factAsync (n:Int):Future[Int]={
-    def helper (acc: Int, remaining: Int):Int={
-      if(remaining<=1) acc
-      else helper(acc*remaining, remaining-1)
+  def squareAsync(n: Int): Future[Int] = {
+    Future {
+      println(s"calc square $n")
+      n * n
     }
-   Future(helper(1, n))
+  }
 
-  }
-  def squreAsync(n:Int):Future[Int]={
-    Future{
-      println(s"culc square $n")
-      n*n}
-  }
-  def collectFut(list:List[Int], f:Int=>Future[Int]):List[Future[Int]]={
-    list.map(x=> f(x))
-  }
-  def collectRes(listFut: List[Future[Int]]):Future[List[Int]]={
-  //Future.sequence(listFut)
-    def helper (acc: Future[List[Int]], remaining: List[Future[Int]]):Future[List[Int]]={
-      if (remaining.isEmpty)acc
-      else {
-        val newAcc = acc.flatMap(listRes=> remaining.head.map(res=> listRes:+res))
-        helper(newAcc, remaining.tail)
+  def factAsync(n: Int): Future[Int] = {
+    def helper(acc: Int, remaining: Int): Int = {
+      if (remaining <= 1) {
+        println(s"calc fact $n")
+        acc
       }
+      else helper(acc * remaining, remaining - 1)
     }
-    val initial = Future.successful(Nil)
-    helper(initial, listFut)
+
+    Future {
+      helper(1, n)
+    }
+
   }
 
- val await = Await.result(collectRes(collectFut(list,squreAsync)),2.second)
-  println(await)
+  def colectAsyncResult(list: List[Int], f: Int => Future[Int]) = {
+    list.map(n => f(n))
+  }
+
+  def colectResult(colectAsyncResult: List[Future[Int]]) = {
+     Future.sequence(colectAsyncResult)
+//    def helper(acc: Future[List[Int]], remaining: List[Future[Int]]): Future[List[Int]] = {
+//      if (remaining.isEmpty) acc
+//      else {
+//        val newAcc = remaining.head.flatMap { res =>
+//          acc.map { listRes => listRes :+ res }
+//        }
+//        helper(newAcc, remaining.tail)
+//      }
+//    }
+//    helper(Future.successful(Nil), colectAsyncResult)
+  }
+
+  val await1 = Await.result(colectResult(colectAsyncResult(list, squareAsync)),1.second)
+  val await2 = Await.result(colectResult(colectAsyncResult(list, factAsync)),1.second)
+  println(await1)
+  println(await2)
 }

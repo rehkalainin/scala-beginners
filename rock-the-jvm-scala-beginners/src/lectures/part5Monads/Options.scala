@@ -2,9 +2,24 @@ package lectures.part5Monads
 
 object Options extends App {
 
-  sealed abstract class Option[+A]
-  class Some[+A](x:A)extends Option[A]
-  object None extends Option[Nothing]
+  sealed trait Option[A]{
+    def map[B](f: A=>B):Option[B]
+    def flatMap[B](f: A=> Option[B]):Option[B]
+  }
+  class Some[A] (a: A) extends Option[A] {
+    override def map[B](f: A => B): Option[B] = new Some(f(a))
+
+    override def flatMap[B](f: A => Option[B]): Option[B] = f(a)
+  }
+  class None[A] extends Option[A] {
+    override def map[B](f: A => B): Option[B] = new None
+
+    override def flatMap[B](f: A => Option[B]): Option[B] = new None
+  }
+
+//  sealed abstract class Option[+A]
+//  class Some[+A](x:A)extends Option[A]
+//  object None extends Option[Nothing]
 
   val mapString = Map("key1"->"value1", "key2"->"value2","key3"->"value3")
   val list = List(1,2,23,4,7,5,6)

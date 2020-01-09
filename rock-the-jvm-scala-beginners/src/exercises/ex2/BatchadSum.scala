@@ -22,41 +22,67 @@ object BatchadSum extends App {
 
   val list = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
 
-  def devideToBatch (list: List[Int], size:Int)={
+  def devideToBatch(list: List[Int], size: Int) = {
     list.grouped(size).toList
   }
-  def batchSumAsync (batch:List[Int])={
-    Future{
+
+  def batchSumAsync(batch: List[Int]) = {
+    Future {
       println(s"culc batch sum $batch")
-      batch.sum}
-  }
-  def collectSumAsync(listOfBatch: List[List[Int]]):Future[List[Int]]={
-    def helper(acc:Future[List[Int]], listBatch:List[List[Int]]):Future[List[Int]]={
-      if (listBatch.isEmpty) acc
-      else {
-        val newAcc = acc.flatMap { listSum =>
-            val batch = listBatch.head
-            batchSumAsync(batch).map(sum=> listSum:+sum)
-        }
-        helper(newAcc, listBatch.tail)
-      }
+      batch.sum
     }
-    val initial= Future.successful(Nil)
-    helper(initial, listOfBatch)
   }
 
-//  def devideToBach(seq: List[Int], batchadSize: Int) = {
-//    seq.grouped(batchadSize).toList
-//  }
-//
-//  def futBatchSum(batch: List[Int]): Future[Int] = {
-//    Future {
-//      println(s"calculating sum of $batch")
-//      //batch.sum
-//      //batch.foldLeft(0)((b,a)=>b+a)
-//      batch.fold(0)(_+_)
-//    }
-//  }
+  def collectSumAsync(listOfBatch: List[List[Int]]): Future[List[Int]] = {
+    def helper(acc: Future[List[Int]], remaining: List[List[Int]]): Future[List[Int]] = {
+      if (remaining.isEmpty) acc
+      else {
+        val batch = remaining.head
+        val newAcc = for {
+          listRes <- acc
+          asyncRes = batchSumAsync(batch)
+          res <- asyncRes
+        } yield listRes :+ res
+
+        //  val newAcc = acc.flatMap { listRes =>
+        //  batchSumAsync(remaining.head).map(res => listRes :+ res)
+
+        helper(newAcc, remaining.tail)
+      }
+    }
+
+    helper(Future.successful(Nil), listOfBatch)
+  }
+
+
+  //  def collectSumAsync(listOfBatch: List[List[Int]]):Future[List[Int]]={
+  //    def helper(acc:Future[List[Int]], listBatch:List[List[Int]]):Future[List[Int]]={
+  //      if (listBatch.isEmpty) acc
+  //      else {
+  //        val newAcc = acc.flatMap { listSum =>
+  //            val batch = listBatch.head
+  //            batchSumAsync(batch).map(sum=> listSum:+sum)
+  //        }
+  //        helper(newAcc, listBatch.tail)
+  //      }
+  //    }
+  //    val initial= Future.successful(Nil)
+  //    helper(initial, listOfBatch)
+  //  }
+
+
+  //  def devideToBach(seq: List[Int], batchadSize: Int) = {
+  //    seq.grouped(batchadSize).toList
+  //  }
+  //
+  //  def futBatchSum(batch: List[Int]): Future[Int] = {
+  //    Future {
+  //      println(s"calculating sum of $batch")
+  //      //batch.sum
+  //      //batch.foldLeft(0)((b,a)=>b+a)
+  //      batch.fold(0)(_+_)
+  //    }
+  //  }
 
 
   //  def collectResult(listOfBatches: List[List[Int]]): Future[List[Int]] = {
@@ -77,7 +103,7 @@ object BatchadSum extends App {
   //    helper(initialList, listOfBatches)
   //  }
 
-  val await= Await.result(collectSumAsync(devideToBatch(list,3)),2.second)
+  val await = Await.result(collectSumAsync(devideToBatch(list, 3)), 2.second)
   println(await)
 
 }

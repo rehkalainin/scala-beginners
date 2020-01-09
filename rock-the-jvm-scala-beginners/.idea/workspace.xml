@@ -2,26 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/ex2/ButchadSumConsistently.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex1/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex1/Counter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex1/Service.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/ParalelFunction$.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/ParalelFunction$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part4Collections/TuplesAndMaps$.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part4Collections/TuplesAndMaps$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part6Futures/Futures$.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part6Futures/Futures$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part6Futures/Futures$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part6Futures/Futures$delayedInit$body.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part6Futures/Futures.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part6Futures/Futures.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/Counter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lectures/part4Collections/TuplesAndMaps.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/part4Collections/TuplesAndMaps.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lectures/part6Futures/Futures.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/part6Futures/Futures.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/ParalelFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/ParalelFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options$.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options$None$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options$Option.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options$Option.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options$Some.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options$Some.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/lectures/part5Monads/Options.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/ParalelFunction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/ParalelFunction.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectures/part5Monads/Options.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectures/part5Monads/Options.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +75,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DayX">
+  <component name="RunManager" selected="Application.BatchadSum">
+    <configuration name="BatchadSum" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex2.BatchadSum" />
+      <module name="rock-the-jvm-scala-beginners" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.ex2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DayX" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="exercises.ex1.DayX" />
       <module name="rock-the-jvm-scala-beginners" />
@@ -123,25 +128,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sequence" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="lectures.part4Collections.Sequence" />
+    <configuration name="ParalelFunction" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex2.ParalelFunction" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lectures.part4Collections.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TuplesAndMaps" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="lectures.part4Collections.TuplesAndMaps" />
-      <module name="rock-the-jvm-scala-beginners" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lectures.part4Collections.*" />
+          <option name="PATTERN" value="exercises.ex2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BatchadSum" />
+        <item itemvalue="Application.ParalelFunction" />
         <item itemvalue="Application.DayX" />
         <item itemvalue="Application.Futures" />
         <item itemvalue="Application.ImplicitEx" />
-        <item itemvalue="Application.TuplesAndMaps" />
-        <item itemvalue="Application.Sequence" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +162,14 @@
       <option name="presentableId" value="Default" />
       <updated>1568726838170</updated>
     </task>
+    <task id="LOCAL-00001" summary="scratch &quot;dayOfWeek&quot;">
+      <created>1577429929024</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577429929024</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +200,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="scratch &quot;dayOfWeek&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="scratch &quot;dayOfWeek&quot;" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="masterDetails">
