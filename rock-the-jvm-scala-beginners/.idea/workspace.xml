@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/BachadInvers.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/BatchadSum$.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/BatchadSum$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/ButchadSumConsistently.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/ButchadSumConsistently.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ButchadSumConsistently">
+  <component name="RunManager" selected="Application.DayX">
     <configuration name="BatchadSum" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="exercises.ex2.BatchadSum" />
       <module name="rock-the-jvm-scala-beginners" />
@@ -134,10 +134,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DayX" />
         <item itemvalue="Application.ButchadSumConsistently" />
         <item itemvalue="Application.BatchadSum" />
         <item itemvalue="Application.ParalelFunction" />
-        <item itemvalue="Application.DayX" />
         <item itemvalue="Application.Futures" />
       </list>
     </recent_temporary>
@@ -167,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578576287534</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="new calc2">
+      <created>1578580996766</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578580996766</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +207,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="scratch &quot;dayOfWeek&quot;" />
     <MESSAGE value="new calc" />
-    <option name="LAST_COMMIT_MESSAGE" value="new calc" />
+    <MESSAGE value="new calc2" />
+    <option name="LAST_COMMIT_MESSAGE" value="new calc2" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="masterDetails">
