@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/BachadInvers.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/SameSymbolSequenceCount.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578580996766</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="after progon">
+      <created>1578655713478</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578655713478</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,7 +214,8 @@
     <MESSAGE value="scratch &quot;dayOfWeek&quot;" />
     <MESSAGE value="new calc" />
     <MESSAGE value="new calc2" />
-    <option name="LAST_COMMIT_MESSAGE" value="new calc2" />
+    <MESSAGE value="after progon" />
+    <option name="LAST_COMMIT_MESSAGE" value="after progon" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="masterDetails">
