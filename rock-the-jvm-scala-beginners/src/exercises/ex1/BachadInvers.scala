@@ -1,9 +1,10 @@
 package exercises.ex1
+
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
+import scala.concurrent.{Await, Future}
 import scala.concurrent.duration._
 
-object BachadInvers extends App{
+object BachadInvers extends App {
 
   /**
    * Написать функцию `batchedFutures`, которая применит заданную функцию `f` к каждому элементу коллекции.
@@ -35,10 +36,45 @@ object BachadInvers extends App{
    * Необходимо проиллюстрировать, что футуры действительно выполняются параллельно в пределах пакета.
    * Продемонстрировать работу программы для разных batchSize: 1, 2, 4, 8, 10, 20
    *
-   * @param l         - входной список
-   * @param batchSize - размер пакета футур
-   * @param f         - функция, которая должна применяться к каждому элементу входного списка `l`
-   */
-  def batchedFutures(l: List[Int], batchSize: Int, f: Int => Future[Int]): Future[Seq[Int]] = ???
+   * //   * @param l         - входной список
+   * //   * @param batchSize - размер пакета футур
+   * //   * @param f         - функция, которая должна применяться к каждому элементу входного списка `l`
+   * //   */
+  val list: List[Int] = (1 to 100).toList
 
-}
+  def splitOnBatches(list: List[Int], size: Int): List[List[Int]] = {
+    val batch = list.grouped(size).toList
+    batch.foreach(println)
+    batch
+  }
+
+  def invers(element: Int): Future[Int] = {
+    Future {
+      Thread.sleep(5000)
+      println(s"invert $element")
+      -element
+    }
+  }
+
+  def batchedFutures(l: List[Int], batchSize: Int, f: Int => Future[Int]): Future[List[Int]] = {
+
+    val batches: List[List[Int]] = splitOnBatches(l, batchSize)
+
+    def helper(acc: Future[List[Int]], remaining: List[List[Int]]): Future[List[Int]] = {
+
+      if (remaining.isEmpty) acc
+      else {
+        val batchFut: List[Future[Int]] = remaining.flatMap { batch =>
+          batch.map(f)
+        }
+        val batchRes: Future[List[Int]] = Future.sequence(batchFut)
+        helper(batchRes, remaining.tail)
+      }
+    }
+    helper(Future.successful(Nil), batches)
+  }
+
+    val await = Await.result(batchedFutures(list, 10, invers), Duration.Inf)
+    println(await)
+
+  }
