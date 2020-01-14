@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/FutureChain.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/BachadInvers.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/BachadInvers.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/SameSymbolSequenceCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/SameSymbolSequenceCount.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,39 +67,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DayX">
+  <component name="RunManager" selected="Application.SameSymbolSequenceCount (1)">
     <configuration name="BachadInvers" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="exercises.ex1.BachadInvers" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="exercises.ex1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BatchadSum" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex2.BatchadSum" />
-      <module name="rock-the-jvm-scala-beginners" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.ex2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ButchadSumConsistently" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex2.ButchadSumConsistently" />
-      <module name="rock-the-jvm-scala-beginners" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.ex2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,12 +94,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParalelFunction" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex2.ParalelFunction" />
+    <configuration name="FutureChane" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex1.FutureChain" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exercises.ex2.*" />
+          <option name="PATTERN" value="exercises.ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SameSymbolSequenceCount (1)" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex1.SameSymbolSequenceCount" />
+      <module name="rock-the-jvm-scala-beginners" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SameSymbolSequenceCount" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex1.SameSymbolSequenceCount.SameSymbolSequenceCount" />
+      <module name="rock-the-jvm-scala-beginners" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.ex1.SameSymbolSequenceCount.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SameSymbolSequenceCount (1)" />
+        <item itemvalue="Application.SameSymbolSequenceCount" />
+        <item itemvalue="Application.FutureChane" />
         <item itemvalue="Application.DayX" />
         <item itemvalue="Application.BachadInvers" />
-        <item itemvalue="Application.ButchadSumConsistently" />
-        <item itemvalue="Application.BatchadSum" />
-        <item itemvalue="Application.ParalelFunction" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578927239684</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="batched calc">
+      <created>1578987352528</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578987352528</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,7 +239,8 @@
     <MESSAGE value="new calc2" />
     <MESSAGE value="after progon" />
     <MESSAGE value="Same symbol Sequence Counte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Same symbol Sequence Counte" />
+    <MESSAGE value="batched calc" />
+    <option name="LAST_COMMIT_MESSAGE" value="batched calc" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="masterDetails">

@@ -1,50 +1,38 @@
 package exercises.ex1
 
-  object SameSymbolSequenceCount extends App {
+/**
+ * Посчитать все последовательности одинаковых символов
+ * Ответ выдать в виде Seq[(Char, Int)] (символ и число последовательных повторений)
+ *
+ * 1 functional
+ * 2 val
+ * 3 no recursion
+ */
+object SameSymbolSequenceCount extends App {
 
-    /**
-     *  Посчитать все последовательности одинаковых символов
-     *  Ответ выдать в виде Seq[(Char, Int)] (символ и число последовательных повторений)
-     */
+  val in = "sstriings"
 
-    val in = "Sstriings"
-
-
-
-
-    /**
-     * Посчитать все последовательности одинаковых символов
-     * Ответ выдать в виде Seq[(Char, Int)] (символ и число последовательных повторений)
-     *
-     * 1 functional
-     * 2 val
-     * 3 no recursion
-     */
-    object SameSymbolSequenceCount extends App {
-
-      val in = "sstriings"
-
-      def count(in: String): Seq[(Char, Int)] = in.foldLeft(Seq.empty[(Char, Int)]) {
-        case (seq, currChar) => seq match {
-          case Nil => Seq(currChar -> 1)
-          case head :: tail => if (head._1 == currChar) {
-            currChar -> (head._2 + 1) :: tail
-          } else {
-            (currChar -> 1) :: head :: tail
-          }
+  def count(s: String): Seq[(Char, Int)] = {
+    s.foldLeft(Seq[(Char, Int)]()) { (seq, n) =>
+      seq match {
+        case Nil => seq :+ (n -> 1)
+        case (char, i) :: tail if char == n => {
+          (char, i + 1) :: tail
         }
+        case _=> (n->1)+:seq
       }
-
-      val t1 = ""
-      val t2 = "sstriings"
-      val t3 = "aabaa"
-
-      println(count(t1))
-      println(count(t2))
-      println(count(t3))
-
-    }
-
+    }.reverse
   }
+
+  val t1 = ""
+  val t2 = "sstriings"
+  val t3 = "aabaa"
+
+  println(count(t1))
+  println(count(t2))
+  println(count(t3))
+
+
+}
 
 

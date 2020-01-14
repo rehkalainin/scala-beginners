@@ -8,6 +8,7 @@ object DayX {
 
   def op(n: Int) = Future {
     Thread.sleep(2000)
+    println(Thread.activeCount())
     n
   }
 
@@ -22,11 +23,10 @@ object DayX {
     } yield n1 + n2
     val stop = System.currentTimeMillis()
 
-    val totalTime = stop-start
+    val totalTime = stop - start
     val await = Await.result(r, Duration.Inf)
 
-    println(s"result $r, time $totalTime")
-
+    //    println(s"result $r, time $totalTime")
+    println(s"result $await, time $totalTime")
   }
-
 }
