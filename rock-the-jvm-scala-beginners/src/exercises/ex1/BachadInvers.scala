@@ -60,21 +60,21 @@ object BachadInvers extends App {
 
     val batches: List[List[Int]] = splitOnBatches(l, batchSize)
 
-    def helper(acc: Future[List[Int]], remaining: List[List[Int]]): Future[List[Int]] = {
+    //        val batchFut: List[Future[Int]] = batches.flatMap { batch =>
+    //          batch.map(invers)
+    //        }
+    //        Future.sequence(batchFut)
 
-      if (remaining.isEmpty) acc
-      else {
-        val batchFut: List[Future[Int]] = remaining.flatMap { batch =>
-          batch.map(f)
-        }
-        val batchRes: Future[List[Int]] = Future.sequence(batchFut)
-        helper(batchRes, remaining.tail)
-      }
-    }
-    helper(Future.successful(Nil), batches)
-  }
+    val batchRes: List[Future[Int]] = for {
+      batch <- batches
+      futRes: Future[Int] <- batch.map(f)
+    } yield futRes
 
-    val await = Await.result(batchedFutures(list, 10, invers), Duration.Inf)
-    println(await)
+    Future.sequence(batchRes)
 
   }
+
+  val await = Await.result(batchedFutures(list, 10, invers), Duration.Inf)
+  println(await)
+
+}
