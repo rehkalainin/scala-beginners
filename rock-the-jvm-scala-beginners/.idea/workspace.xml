@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/FutureChain.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/CharsCounters.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/BachadInvers.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/BatchedCalc.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/SameSymbolSequenceCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/SameSymbolSequenceCount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/FutureChain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/FutureChain.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/SameSymbolSequenceCount.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/ButchadSumConsistently.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/ButchadSumConsistently.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +73,7 @@
   </component>
   <component name="RunManager" selected="Application.SameSymbolSequenceCount (1)">
     <configuration name="BachadInvers" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex1.BachadInvers" />
+      <option name="MAIN_CLASS_NAME" value="exercises.ex1.BatchedCalc" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
@@ -108,7 +112,7 @@
       </method>
     </configuration>
     <configuration name="SameSymbolSequenceCount (1)" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex1.SameSymbolSequenceCount" />
+      <option name="MAIN_CLASS_NAME" value="exercises.ex1.CharsCounters" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
@@ -136,10 +140,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.SameSymbolSequenceCount (1)" />
-        <item itemvalue="Application.SameSymbolSequenceCount" />
-        <item itemvalue="Application.FutureChane" />
         <item itemvalue="Application.DayX" />
         <item itemvalue="Application.BachadInvers" />
+        <item itemvalue="Application.SameSymbolSequenceCount" />
+        <item itemvalue="Application.FutureChane" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578987352528</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="seq calc">
+      <created>1579003250758</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579003250758</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,7 +251,8 @@
     <MESSAGE value="after progon" />
     <MESSAGE value="Same symbol Sequence Counte" />
     <MESSAGE value="batched calc" />
-    <option name="LAST_COMMIT_MESSAGE" value="batched calc" />
+    <MESSAGE value="seq calc" />
+    <option name="LAST_COMMIT_MESSAGE" value="seq calc" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="masterDetails">

@@ -27,7 +27,7 @@ object FutureChain extends App {
     }
   }
 
-  // Simple level 1 - chane f and f1
+  // Simple level 1 - chain f and f1
 
   //  val res = f().flatMap(f2)
 
@@ -38,13 +38,13 @@ object FutureChain extends App {
   //  } yield res
 
 
-  // level 2 - chane f1 and f2 on list
+  // level 2 - chain f1 and f2 on list
 
-//  val listFut: List[Future[Int]] = list.map(f1)
-//  val futRes1: Future[List[Int]] = Future.sequence(listFut)
-//
-//  val listFut2 = futRes1.flatMap(list => list.map(f2))
-//
+  val listFut: List[Future[Int]] = list.map(f1)
+  val futRes1: Future[List[Int]] = Future.sequence(listFut)
+
+  val listFut2 = futRes1.flatMap(list => Future.traverse(list)(f2))
+
 //  for{
 //    res1: List[Int] <- futRes1
 //    futRes2: Future[Int] <- res1.map(f2)

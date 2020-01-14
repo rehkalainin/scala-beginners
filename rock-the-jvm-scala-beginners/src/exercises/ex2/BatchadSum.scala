@@ -39,9 +39,9 @@ object BatchadSum extends App {
       else {
         val batch = remaining.head
         val newAcc = for {
-          listRes <- acc
-          asyncRes = batchSumAsync(batch)
-          res <- asyncRes
+          listRes: List[Int] <- acc
+          asyncRes: Future[Int] = batchSumAsync(batch)
+          res: Int <- asyncRes
         } yield listRes :+ res
 
         //  val newAcc = acc.flatMap { listRes =>

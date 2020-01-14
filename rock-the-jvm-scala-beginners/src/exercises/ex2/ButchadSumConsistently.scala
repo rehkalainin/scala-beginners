@@ -1,5 +1,7 @@
 package exercises.ex2
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader
+
 import scala.concurrent.{Await, Future}
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
@@ -36,41 +38,28 @@ object ButchadSumConsistently extends App {
    * Необходимо проиллюстрировать, что футуры действительно выполняются параллельно в пределах пакета.
    * Продемонстрировать работу программы для разных batchSize: 1, 2, 4, 8, 10, 20
    *
-//   * @param l         - входной список
-//   * @param batchSize - размер пакета футур
-//   * @param f         - функция, которая должна применяться к каждому элементу входного списка `l`
-//   */
+   * //   * @param l         - входной список
+   * //   * @param batchSize - размер пакета футур
+   * //   * @param f         - функция, которая должна применяться к каждому элементу входного списка `l`
+   * //   */
+
   val l = (1 to 100).toList
 
-  def batchedFutures(l: List[Int], batchSize: Int, f: Int => Future[Int]): Future[Seq[Int]] = ???
+  def batchedFutures(l: List[Int], batchSize: Int, f: Int => Future[Int]): Future[List[Int]] = ???
 
-  def invert(batch: List[Int]): Future[List[Int]] = {
-   Future{
-     println(s" invert batch $batch")
-     batch.map(e=> -e)
-   }
+  def invert(e: Int): Future[Int] = {
+    Future {
+      println(s" invert $e")
+      -e
+    }
   }
 
   def listofBached(l: List[Int], batchSize: Int) = {
     l.grouped(batchSize).toList
   }
 
-  def collectResAsync(listOfBatch: List[List[Int]]): Future[List[Int]]={
-    def helper (acc: Future[List[Int]], remaining: List[List[Int]]):Future[List[Int]]={
-      if(remaining.isEmpty) acc
-      else{
-        val batch = remaining.head
-        val newAcc = for {
-          listRes <- acc
-          asyncRes = invert(batch)
-          res <- asyncRes
-        } yield listRes ++ res
-        helper(newAcc,remaining.tail)
-      }
-    }
-    helper(Future.successful(Nil), listOfBatch)
-  }
-val await = Await.result(collectResAsync(listofBached(l,3)),2.second)
-  println(await)
+
+//  val await = Await.result(collectResAsync(listofBached(l, 3)), 2.second)
+//  println(await)
 
 }

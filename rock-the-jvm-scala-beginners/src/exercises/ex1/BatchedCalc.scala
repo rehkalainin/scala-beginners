@@ -4,7 +4,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.{Await, Future}
 import scala.concurrent.duration._
 
-object BachadInvers extends App {
+object BatchedCalc extends App {
 
   /**
    * Написать функцию `batchedFutures`, которая применит заданную функцию `f` к каждому элементу коллекции.
@@ -60,17 +60,31 @@ object BachadInvers extends App {
 
     val batches: List[List[Int]] = splitOnBatches(l, batchSize)
 
-    //        val batchFut: List[Future[Int]] = batches.flatMap { batch =>
-    //          batch.map(invers)
-    //        }
-    //        Future.sequence(batchFut)
+    //    val batchFut: List[Future[Int]] = batches.flatMap { batch =>
+    //      batch.map(f)
+    //    }
+    //    Future.sequence(batchFut)
 
-    val batchRes: List[Future[Int]] = for {
-      batch <- batches
-      futRes: Future[Int] <- batch.map(f)
-    } yield futRes
+    def helper(acc: Future[List[Int]], remaining: List[List[Int]]): Future[List[Int]] = {
+      remaining match {
+        case Nil => acc
+        case batch :: tail =>
+          val newAcc = acc.flatMap { listRes =>
+            val mapedBatch: Future[List[Int]] = Future.traverse(batch)(f)
+            mapedBatch.map(list => listRes ++ list)
+          }
+          helper(newAcc, tail)
+      }
+    }
 
-    Future.sequence(batchRes)
+    helper(Future.successful(Nil), batches)
+
+//    batches.foldLeft(Future.successful(List.empty[Int])) { (accFut, batch) =>
+//      for {
+//        acc: List[Int] <- accFut
+//        mappedBatch: List[Int] <- Future.traverse(batch)(f)
+//      } yield acc ++ mappedBatch
+//    }
 
   }
 
