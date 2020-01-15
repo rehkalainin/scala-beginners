@@ -8,7 +8,7 @@ object DayX {
 
   def op(n: Int) = Future {
     Thread.sleep(2000)
-    println(Thread.activeCount())
+    println(s"count $n")
     n
   }
 
@@ -16,15 +16,17 @@ object DayX {
   // TODO сколько потоков
   def main(args: Array[String]) = {
 
+
     val t1 = System.currentTimeMillis()
     val r: Future[Int] = for {
       n1 <- op(5)
       n2 <- op(7)
     } yield n1 + n2
-
+    val t2 = System.currentTimeMillis()
 
     val await = Await.result(r, Duration.Inf)
-    val t2 = System.currentTimeMillis()
+
+
     val totalTime = t2 - t1
     //    println(s"result $r, time $totalTime")
     println(s"result $await, time $totalTime")

@@ -29,7 +29,10 @@ object FutureChain extends App {
   def calc(l: List[Int], f1: Int => Future[Int], f2: Int => Future[Int]): Future[List[Int]] = {
 
     val listFut: List[Future[Int]] = list.map(f1)
-    val futRes1: Future[List[Int]] = Future.sequence(listFut) // parallel calc
+    val futRes1: Future[List[Int]] = Future.sequence(listFut).recoverWith { case e: ArithmeticException => Future {
+      List.empty[Int]
+    }
+    } // parallel calc
 
     for {
       listRes1: List[Int] <- futRes1

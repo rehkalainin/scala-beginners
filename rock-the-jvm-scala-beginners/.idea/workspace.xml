@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/batchedFutures.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/BatchadSum$.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/BatchadSum$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/BatchadSum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/BatchadSum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/BatchedCalc.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/CharsCounters.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/CharsCounters.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/DayX.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/exercises/ex1/FutureChain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/FutureChain.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/ButchadSumConsistently.scala" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FutureChain">
+  <component name="RunManager" selected="Application.DayX">
     <configuration name="BatchadSum" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="exercises.ex2.BatchadSum" />
       <module name="rock-the-jvm-scala-beginners" />
@@ -140,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DayX" />
         <item itemvalue="Application.FutureChain" />
         <item itemvalue="Application.batchedFutures" />
         <item itemvalue="Application.BatchadSum" />
         <item itemvalue="Application.SameSymbolSequenceCount (1)" />
-        <item itemvalue="Application.DayX" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579018217842</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Future practic">
+      <created>1579093858782</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579093858782</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,7 +262,8 @@
     <MESSAGE value="batched calc" />
     <MESSAGE value="seq calc" />
     <MESSAGE value="seq calc fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="seq calc fix" />
+    <MESSAGE value="Future practic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Future practic" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="masterDetails">
