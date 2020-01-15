@@ -20,90 +20,40 @@ object BatchadSum extends App {
   //
   //  Тоесть, сначала вычисляется f1, затем - f2 и т.д. Другими словами, они не должны вычисляться параллельно.
 
-  val list = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+  val list = (1 to 100).toList
 
-  def devideToBatch(list: List[Int], size: Int) = {
-    list.grouped(size).toList
-  }
-
-  def batchSumAsync(batch: List[Int]) = {
+  def batchSum(batch: List[Int]): Future[Int] = {
     Future {
-      println(s"culc batch sum $batch")
-      batch.sum
+      Thread.sleep(3000)
+      val sum = batch.sum
+      println(s"compute batchSum of batch $batch : $sum")
+      sum
     }
   }
 
-  def collectSumAsync(listOfBatch: List[List[Int]]): Future[List[Int]] = {
-    def helper(acc: Future[List[Int]], remaining: List[List[Int]]): Future[List[Int]] = {
-      if (remaining.isEmpty) acc
-      else {
-        val batch = remaining.head
-        val newAcc = for {
-          listRes: List[Int] <- acc
-          asyncRes: Future[Int] = batchSumAsync(batch)
-          res: Int <- asyncRes
-        } yield listRes :+ res
+  def batchedSum(xs: List[Int], batchSize: Int): Future[List[Int]] = {
+    val batches: List[List[Int]] = xs.grouped(batchSize).toList
 
-        //  val newAcc = acc.flatMap { listRes =>
-        //  batchSumAsync(remaining.head).map(res => listRes :+ res)
+    /////// paralel computetion
 
-        helper(newAcc, remaining.tail)
-      }
-    }
+        val listFut: List[Future[Int]] = batches.map(batchSum)
+        Future.sequence(listFut)
 
-    helper(Future.successful(Nil), listOfBatch)
+    /////////// sequence computetion by 1 Thread
+
+//    batches.foldLeft(Future.successful(List.empty[Int])) { (accFut, batch) =>
+//      for {
+//        accRes: List[Int] <- accFut
+//        res: Int <- batchSum(batch)
+//      } yield accRes :+ res
+    //}
+
+      ///////// sequence computetion by max Threds
+      //    Future.traverse(batches)(batchSum)
+
+
   }
 
-
-  //  def collectSumAsync(listOfBatch: List[List[Int]]):Future[List[Int]]={
-  //    def helper(acc:Future[List[Int]], listBatch:List[List[Int]]):Future[List[Int]]={
-  //      if (listBatch.isEmpty) acc
-  //      else {
-  //        val newAcc = acc.flatMap { listSum =>
-  //            val batch = listBatch.head
-  //            batchSumAsync(batch).map(sum=> listSum:+sum)
-  //        }
-  //        helper(newAcc, listBatch.tail)
-  //      }
-  //    }
-  //    val initial= Future.successful(Nil)
-  //    helper(initial, listOfBatch)
-  //  }
-
-
-  //  def devideToBach(seq: List[Int], batchadSize: Int) = {
-  //    seq.grouped(batchadSize).toList
-  //  }
-  //
-  //  def futBatchSum(batch: List[Int]): Future[Int] = {
-  //    Future {
-  //      println(s"calculating sum of $batch")
-  //      //batch.sum
-  //      //batch.foldLeft(0)((b,a)=>b+a)
-  //      batch.fold(0)(_+_)
-  //    }
-  //  }
-
-
-  //  def collectResult(listOfBatches: List[List[Int]]): Future[List[Int]] = {
-  //    //  Future.sequence(listOfBatches.map(listSum)) // параллельное вычисление всех батчей
-  //
-  //    def helper(acc: Future[List[Int]], remaining: List[List[Int]]): Future[List[Int]] = {
-  //      if (remaining.isEmpty) acc
-  //      else {
-  //        val newAcc = acc.flatMap { sumList =>
-  //          val batch = remaining.head
-  //          listSum(batch).map(sum => sumList :+ sum)
-  //        }
-  //        helper(newAcc, remaining.tail)
-  //      }
-  //    }
-  //
-  //    val initialList: Future[List[Int]] = Future.successful(Nil)
-  //    helper(initialList, listOfBatches)
-  //  }
-
-  val await = Await.result(collectSumAsync(devideToBatch(list, 3)), 2.second)
+  val await = Await.result(batchedSum(list, 5), Duration.Inf)
   println(await)
-
 }

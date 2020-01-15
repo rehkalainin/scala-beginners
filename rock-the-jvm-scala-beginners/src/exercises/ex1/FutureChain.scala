@@ -9,47 +9,36 @@ object FutureChain extends App {
 
   val list = (1 to 10).toList
 
-  def f(): Future[Int] = {
-    Future {
-      5
-    }
-  }
-
   def f1(e: Int): Future[Int] = {
     Future {
-      e * 10
+      Thread.sleep(2000)
+      println(s"calc f1 : el $e")
+      e * 11
     }
   }
 
   def f2(e: Int): Future[Int] = {
     Future {
+      Thread.sleep(2000)
+      println(s"calc f2 : el $e")
       -e
     }
   }
 
-  // Simple level 1 - chain f and f1
+  // chain f1 and f2 on list
+  def calc(l: List[Int], f1: Int => Future[Int], f2: Int => Future[Int]): Future[List[Int]] = {
 
-  //  val res = f().flatMap(f2)
+    val listFut: List[Future[Int]] = list.map(f1)
+    val futRes1: Future[List[Int]] = Future.sequence(listFut) // parallel calc
 
-  //  val r: Future[Int] = f()
-  //  val res1: Future[Int] = for {
-  //    a: Int <- r
-  //    res: Int <- f2(a)
-  //  } yield res
+    for {
+      listRes1: List[Int] <- futRes1
+      listRes2: List[Int] <- Future.traverse(listRes1)(f2) // sequenc calc
 
+    } yield listRes2
 
-  // level 2 - chain f1 and f2 on list
+  }
 
-  val listFut: List[Future[Int]] = list.map(f1)
-  val futRes1: Future[List[Int]] = Future.sequence(listFut)
-
-  val listFut2 = futRes1.flatMap(list => Future.traverse(list)(f2))
-
-//  for{
-//    res1: List[Int] <- futRes1
-//    futRes2: Future[Int] <- res1.map(f2)
-//  } yield futRes2
-
-  //  val await = Await.result(res, Duration.Inf)
-  //  println(await)
+  val await = Await.result(calc(list, f1, f2), Duration.Inf)
+  println(await)
 }

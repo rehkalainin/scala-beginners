@@ -16,7 +16,7 @@ object CharsCounters extends App {
     str.foldLeft(Seq[(Char, Int)]()) { (seq, n) =>
       seq match {
         case (`n`, i) :: tail => (n, i + 1) :: tail
-        //  case (char, i) :: tail if char == n => (char, i + 1) :: tail
+        // или так  case (char, i) :: tail if char == n => (char, i + 1) :: tail
         case _ => (n -> 1) +: seq
       }
 

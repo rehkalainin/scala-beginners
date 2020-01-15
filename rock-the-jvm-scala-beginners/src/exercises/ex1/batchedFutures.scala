@@ -1,10 +1,10 @@
 package exercises.ex1
 
-import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.{Await, Future}
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 
-object BatchedCalc extends App {
+object batchedFutures extends App {
 
   /**
    * Написать функцию `batchedFutures`, которая применит заданную функцию `f` к каждому элементу коллекции.
@@ -40,55 +40,51 @@ object BatchedCalc extends App {
    * //   * @param batchSize - размер пакета футур
    * //   * @param f         - функция, которая должна применяться к каждому элементу входного списка `l`
    * //   */
-  val list: List[Int] = (1 to 100).toList
 
-  def splitOnBatches(list: List[Int], size: Int): List[List[Int]] = {
-    val batch = list.grouped(size).toList
-    batch.foreach(println)
-    batch
-  }
+  val list = (1 to 100).toList
 
-  def invers(element: Int): Future[Int] = {
-    Future {
-      Thread.sleep(5000)
-      println(s"invert $element")
-      -element
-    }
-  }
+  def batchFutures(l: List[Int], size: Int, f: Int => Future[Int]): Future[List[Int]] = {
+    val batches: List[List[Int]] = l.grouped(size).toList
 
-  def batchedFutures(l: List[Int], batchSize: Int, f: Int => Future[Int]): Future[List[Int]] = {
+    /////////////// sequence computation by recursion
 
-    val batches: List[List[Int]] = splitOnBatches(l, batchSize)
-
-    //    val batchFut: List[Future[Int]] = batches.flatMap { batch =>
-    //      batch.map(f)
+    //    def helper(acc: Future[List[Int]], remaining: List[List[Int]]): Future[List[Int]] = {
+    //      remaining match {
+    //        case Nil => acc
+    //        case batch :: tail =>
+    //          val newAcc: Future[List[Int]] = acc.flatMap { listRes =>
+    //            val futBatch: Future[List[Int]] = Future.traverse(batch)(f)
+    //            futBatch.map { batchRes =>
+    //              listRes ++ batchRes
+    //            }
+    //          }
+    //          helper(newAcc, tail)
+    //      }
     //    }
-    //    Future.sequence(batchFut)
+    //
+    //    helper(Future.successful(Nil), batches)
 
-    def helper(acc: Future[List[Int]], remaining: List[List[Int]]): Future[List[Int]] = {
-      remaining match {
-        case Nil => acc
-        case batch :: tail =>
-          val newAcc = acc.flatMap { listRes =>
-            val mapedBatch: Future[List[Int]] = Future.traverse(batch)(f)
-            mapedBatch.map(list => listRes ++ list)
-          }
-          helper(newAcc, tail)
-      }
+    //////////// sequence computetion by foldLeft
+
+    batches.foldLeft(Future.successful(List.empty[Int])) { (accFut, batch) =>
+      for {
+        accRes: List[Int] <- accFut
+        batchRes: List[Int] <- Future.traverse(batch)(f)
+      } yield accRes ++ batchRes
     }
 
-    helper(Future.successful(Nil), batches)
+    ////////////////// paralel computetion
 
-//    batches.foldLeft(Future.successful(List.empty[Int])) { (accFut, batch) =>
-//      for {
-//        acc: List[Int] <- accFut
-//        mappedBatch: List[Int] <- Future.traverse(batch)(f)
-//      } yield acc ++ mappedBatch
-//    }
+    //    val listFut: List[Future[Int]] = batches.flatMap(batch=> batch.map(f))
+    //    val listRes: Future[List[Int]] = Future.sequence(listFut)
+    //    listRes
 
   }
 
-  val await = Await.result(batchedFutures(list, 10, invers), Duration.Inf)
+  val await = Await.result(batchFutures(list, 5, (e: Int) => Future {
+    Thread.sleep(3000)
+    println(s"invert $e ")
+    -e
+  }), Duration.Inf)
   println(await)
-
 }
