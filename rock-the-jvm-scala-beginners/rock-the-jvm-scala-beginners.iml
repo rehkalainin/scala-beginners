@@ -10,5 +10,6 @@
     <orderEntry type="library" name="scala-sdk-2.13.0" level="application" />
     <orderEntry type="library" exported="" name="scala-sdk-2.12.10" level="application" />
     <orderEntry type="library" name="scala-sdk-2.12.8" level="application" />
+    <orderEntry type="library" name="org.typelevel:cats-core_2.12:2.0.0" level="project" />
   </component>
 </module>

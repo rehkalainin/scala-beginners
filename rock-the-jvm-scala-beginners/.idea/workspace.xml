@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/CheckDay.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/ConnectionProblem.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/TypeTask.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_typelevel_cats_core_2_12_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/FutureSuccessAndFalse.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rock-the-jvm-scala-beginners.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rock-the-jvm-scala-beginners.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/ConnectionProblem.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/ConnectionProblem.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +42,16 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Scala" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/scala/lib/scala-library.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.27586207" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
@@ -67,20 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Progon">
-    <configuration name="BatchadSum" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex2.BatchadSum" />
-      <module name="rock-the-jvm-scala-beginners" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.ex2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.FutureSuccessAndFalse">
     <configuration name="DayX" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="exercises.ex1.DayX" />
       <module name="rock-the-jvm-scala-beginners" />
@@ -107,6 +99,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FutureSuccessAndFalse" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex1.FutureSuccessAndFalse" />
+      <module name="rock-the-jvm-scala-beginners" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Progon" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="exercises.CheckDay" />
       <module name="rock-the-jvm-scala-beginners" />
@@ -120,12 +125,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="batchedFutures" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex1.batchedFutures" />
+    <configuration name="Sequence" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="lectures.part4Collections.Sequence" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exercises.ex1.*" />
+          <option name="PATTERN" value="lectures.part4Collections.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FutureSuccessAndFalse" />
+        <item itemvalue="Application.Sequence" />
         <item itemvalue="Application.Progon" />
         <item itemvalue="Application.DayX" />
         <item itemvalue="Application.FutureChain" />
-        <item itemvalue="Application.batchedFutures" />
-        <item itemvalue="Application.BatchadSum" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579096181892</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="after progon">
+      <created>1579181558540</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1579181558541</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,86 +277,14 @@
     <MESSAGE value="scratch &quot;dayOfWeek&quot;" />
     <MESSAGE value="new calc" />
     <MESSAGE value="new calc2" />
-    <MESSAGE value="after progon" />
     <MESSAGE value="Same symbol Sequence Counte" />
     <MESSAGE value="batched calc" />
     <MESSAGE value="seq calc" />
     <MESSAGE value="seq calc fix" />
     <MESSAGE value="Future practic" />
     <MESSAGE value="Future practic1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Future practic1" />
+    <MESSAGE value="after progon" />
+    <option name="LAST_COMMIT_MESSAGE" value="after progon" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>rock-the-jvm-scala-beginners</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.27586207" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

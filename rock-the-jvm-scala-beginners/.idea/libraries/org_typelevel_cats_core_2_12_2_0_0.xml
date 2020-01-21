@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.typelevel:cats-core_2.12:2.0.0" type="repository">
+    <properties maven-id="org.typelevel:cats-core_2.12:2.0.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/typelevel/cats-core_2.12/2.0.0/cats-core_2.12-2.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.12.9/scala-library-2.12.9.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/typelevel/cats-macros_2.12/2.0.0/cats-macros_2.12-2.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/typelevel/cats-kernel_2.12/2.0.0/cats-kernel_2.12-2.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
