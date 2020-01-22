@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/NumberCouterSeq.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex2/MyQueueEx.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex2/MyTreeLeafNode.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/ex2/MyTreeNilNode.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/Transformation.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/MyTreeEx$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/MyTreeEx$Leaf$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/MyTreeEx$Leaf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/MyTreeEx$Node$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/MyTreeEx$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/MyTreeEx$Tree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/MyTreeEx$delayedInit$body.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/MyTreeEx.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/CharsCounters.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/CharsCountersSeq.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/MyTreeEx.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/MyQueueEx.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/MyQueueEx.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +46,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Scala" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/scala/bin" />
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/scala/lib/scala-library.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.27586207" />
@@ -82,13 +70,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NumberCouterSeq">
-    <configuration name="FutureSuccessAndFalse" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex1.FutureSuccessAndFalse" />
+  <component name="RunManager" selected="Application.Transformation">
+    <configuration name="MyQueueEx" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex2.MyQueueEx" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exercises.ex1.*" />
+          <option name="PATTERN" value="exercises.ex2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sequence" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="lectures.part4Collections.Sequence" />
+    <configuration name="Transformation" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex1.Transformation" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lectures.part4Collections.*" />
+          <option name="PATTERN" value="exercises.ex1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Transformation" />
+        <item itemvalue="Application.MyQueueEx" />
         <item itemvalue="Application.NumberCouterSeq" />
         <item itemvalue="Application.MyTreeNilNode" />
         <item itemvalue="Application.MyTreeEx" />
-        <item itemvalue="Application.FutureSuccessAndFalse" />
-        <item itemvalue="Application.Sequence" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579605566196</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="counter of &quot;-&quot; seq">
+      <created>1579675403178</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1579675403179</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -302,7 +297,8 @@
     <MESSAGE value="Future practic1" />
     <MESSAGE value="after progon" />
     <MESSAGE value="Futures Success and False" />
-    <option name="LAST_COMMIT_MESSAGE" value="Futures Success and False" />
+    <MESSAGE value="counter of &quot;-&quot; seq" />
+    <option name="LAST_COMMIT_MESSAGE" value="counter of &quot;-&quot; seq" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
