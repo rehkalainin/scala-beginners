@@ -8,7 +8,7 @@ package exercises.ex1
  * 2 val
  * 3 no recursion
  */
-object CharsCounters extends App {
+object CharsCountersSeq extends App {
 
   val in = "sstriings"
 
