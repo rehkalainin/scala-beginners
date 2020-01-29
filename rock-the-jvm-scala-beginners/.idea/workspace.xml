@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/ex1/NumberCounterSeq.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/CheckDay.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/CheckDay.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FutureSuccessAndFalse">
+  <component name="RunManager" selected="Application.NumberCounterSeq">
     <configuration name="FutureSuccessAndFalse" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="exercises.ex1.FutureSuccessAndFalse" />
       <module name="rock-the-jvm-scala-beginners" />
@@ -95,8 +97,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NumberCouterSeq" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex1.NumberCouterSeq" />
+    <configuration name="NumberCounterSeq" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex1.NumberCounterSeqAll" />
       <module name="rock-the-jvm-scala-beginners" />
       <extension name="coverage">
         <pattern>
@@ -136,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NumberCounterSeq" />
         <item itemvalue="Application.FutureSuccessAndFalse" />
         <item itemvalue="Application.SuccessAndFalseSeparator" />
         <item itemvalue="Application.Transformation" />
         <item itemvalue="Application.MyQueueEx" />
-        <item itemvalue="Application.NumberCouterSeq" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580143440904</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="transform">
+      <created>1580144227350</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1580144227350</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
