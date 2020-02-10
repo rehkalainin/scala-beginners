@@ -36,21 +36,17 @@ object BatchadSum extends App {
 
     /////// paralel computetion
 
-//        val listFut: List[Future[Int]] = batches.map(batchSum)
-//        Future.sequence(listFut)
+    //        val listFut: List[Future[Int]] = batches.map(batchSum)
+    //        Future.sequence(listFut)
 
     /////////// sequence computetion by 1 Thread
 
     batches.foldLeft(Future.successful(List.empty[Int])) { (accFut, batch) =>
       for {
         accRes: List[Int] <- accFut
-        res: List[Int] <- Future.traverse(batches)(batchSum)
-      } yield accRes ++ res
+        res <- batchSum(batch)
+      } yield accRes :+ res
     }
-
-      /////// sequence computetion by max Threds
-
-
 
   }
 

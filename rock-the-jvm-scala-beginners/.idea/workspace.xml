@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="13386540-5617-4d81-aec3-29a94c8ddef6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/BatchadSum$.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rock-the-jvm-scala-beginners/exercises/ex2/BatchadSum$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/exercises/CheckDay.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/CheckDay.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/ex1/NumberCounterSeqAll.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex1/NumberCounterSeqAll.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/ex2/BatchadSum.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NumberCounterSeq">
+  <component name="RunManager" selected="Application.BatchadSum">
+    <configuration name="BatchadSum" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="exercises.ex2.BatchadSum" />
+      <module name="rock-the-jvm-scala-beginners" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.ex2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CheckDay" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="exercises.CheckDay" />
       <module name="rock-the-jvm-scala-beginners" />
@@ -124,26 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuccessAndFalseSeparator" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.ex2.SuccessAndFalseSeparator" />
-      <module name="rock-the-jvm-scala-beginners" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.ex2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NumberCounterSeq" />
+        <item itemvalue="Application.BatchadSum" />
         <item itemvalue="Application.CheckDay" />
+        <item itemvalue="Application.NumberCounterSeq" />
         <item itemvalue="Application.HPandDemage" />
         <item itemvalue="Application.FutureSuccessAndFalse" />
-        <item itemvalue="Application.SuccessAndFalseSeparator" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580891786654</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="seq 1 2 3">
+      <created>1580937344461</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1580937344461</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,7 +345,8 @@
     <MESSAGE value="transform" />
     <MESSAGE value="counterSeqAll" />
     <MESSAGE value="regex Name Email" />
-    <option name="LAST_COMMIT_MESSAGE" value="regex Name Email" />
+    <MESSAGE value="seq 1 2 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="seq 1 2 3" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
